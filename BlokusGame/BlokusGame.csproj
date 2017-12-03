@@ -54,6 +54,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\PieceBlockController\MoveThumb.cs" />
+    <Compile Include="Controls\PieceBlockController\PieceBlockController.xaml.cs">
+      <DependentUpon>PieceBlockController.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PieceCellController.xaml.cs">
+      <DependentUpon>PieceCellController.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyThumb.cs" />
+    <Compile Include="Settings\BoardCellSettings.cs" />
+    <Page Include="Controls\PieceBlockController\PieceBlockController.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PieceCellController.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,6 +87,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\PieceController.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -78,6 +99,9 @@
   <ItemGroup>
     <Compile Include="Controls\PlayerInventory.xaml.cs">
       <DependentUpon>PlayerInventory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PieceController.xaml.cs">
+      <DependentUpon>PieceController.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -105,13 +129,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Blokus\Blokus\Blokus\Blokus.csproj">
+    <Folder Include="enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Blokus\Blokus\Blokus\Blokus.csproj">
       <Project>{44eb322e-865b-4221-a0cb-da3d47e3d79d}</Project>
       <Name>Blokus</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="enums\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

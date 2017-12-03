@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Programming Software\Visual Studio Projects\BlokusUI\BlokusUI\BlokusGame\obj\Debug\
+D:\Programming Software\Visual Studio Projects\BlokusUI\BlokusUI\Blokus-App\BlokusGame\obj\Debug\
 BlokusGame
 none
 false
 DEBUG;TRACE
-D:\Programming Software\Visual Studio Projects\BlokusUI\BlokusUI\BlokusGame\App.xaml
-3-820092349
+D:\Programming Software\Visual Studio Projects\BlokusUI\BlokusUI\Blokus-App\BlokusGame\App.xaml
+61250445304
 
-10456263626
+16-1884224160
 14-1609840815
-MainWindow.xaml;Controls\PlayerInventory.xaml;Themes\Generic.xaml;
+Controls\PieceBlockController\PieceBlockController.xaml;Controls\PieceCellController.xaml;MainWindow.xaml;Controls\PlayerInventory.xaml;Controls\PieceController.xaml;Themes\Generic.xaml;
 
 True
 

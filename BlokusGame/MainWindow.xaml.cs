@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using BlokusGame.Settings;
+using System.Linq;
+using System;
 
 namespace BlokusGame
 {
@@ -12,6 +15,7 @@ namespace BlokusGame
     {
         private int boardSize = 0;
         private ColumnDefinition[] columns;
+        private static Random random = new Random();
 
         public MainWindow()
         {
@@ -38,6 +42,7 @@ namespace BlokusGame
                 for(int j=0; j<ncols; j++)
                 {
                     Button button = new Button();
+
                     button.Name = "Button_" + i.ToString() + "_" + j.ToString();
                     Grid.SetRow(button, i);
                     Grid.SetColumn(button, j);
@@ -47,8 +52,8 @@ namespace BlokusGame
             }
 
             // Initialize Board and players
-            var b = new Board(ncols, nrows);
-            b.PrintBoardText();
+            var gameboard = new Board(ncols, nrows);
+            gameboard.PrintBoardText();
 
             // Create Players
             List<Player> players = new List<Player>();
@@ -66,8 +71,8 @@ namespace BlokusGame
             p4.SetCellAsAvailable(new int[] { nrows - 1, ncols - 1 });
 
             players.Add(p1);
-            players.Add(p2);
-            players.Add(p3);
+            //players.Add(p2);
+            //players.Add(p3);
             players.Add(p4);
 
             // Add pieces to player
@@ -77,6 +82,21 @@ namespace BlokusGame
             AddPiecesForPlayer(p3);
             AddPiecesForPlayer(p4);
 
+            while(true)
+            {
+                bool gameInPlay = false;
+                foreach(var player in players)
+                {
+                    var moves = gameboard.GetPossibleMovesForPlayer(player); // moves currently does not get moves from rotating/flipping pieces. only if it fit
+                    if (moves.Any())
+                    {
+                        // gameInPlay = true // COMMENTED OUT UNTIL IMPLEMENTING MAKING MOVES
+                        int pickedMove = random.Next(0, moves.Count);
+                        Move toDoMove = moves[pickedMove];
+                    }
+                }
+                if (gameInPlay == false) break;
+            }
         }
         
         private static void CreatePlayerInventoryUI(Grid g, Player p)

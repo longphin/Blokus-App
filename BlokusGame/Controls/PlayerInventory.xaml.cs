@@ -1,4 +1,5 @@
 ﻿using Blokus;
+using BlokusGame.Settings;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -40,14 +41,26 @@ namespace BlokusGame
             {
                 int nrow = (int)((double)i / (double)colsPerRow);
                 int ncol = i % (colsPerRow);
+
+                Grid inventoryCell = new Grid();
+                inventoryCell.RowDefinitions.Add(new RowDefinition());
+                inventoryCell.RowDefinitions.Add(new RowDefinition());
+
                 Button button = new Button();
                 button.Name = "Button_" + nrow.ToString() + "_" + ncol.ToString();
-                button.Content = i.ToString() + "-" + nrow.ToString() + "-" + ncol.ToString();
+                button.Content = p.pieces[i].name + "-" + nrow.ToString() + "-" + ncol.ToString();
                 button.FontSize = 9;
-                Grid.SetRow(button, nrow);
-                Grid.SetColumn(button, ncol);
+                Grid.SetRow(button, 0);
+                inventoryCell.Children.Add(button);
 
-                Inventory.Children.Add(button);
+                var piece = new PieceController(p.pieces[i]);
+                Grid.SetRow(piece, 1);
+                inventoryCell.Children.Add(piece);
+
+                Grid.SetRow(inventoryCell, nrow);
+                Grid.SetColumn(inventoryCell, ncol);
+                
+                Inventory.Children.Add(inventoryCell);
             }
         }
 
