@@ -87,12 +87,27 @@ namespace BlokusGame
                 bool gameInPlay = false;
                 foreach(var player in players)
                 {
-                    var moves = gameboard.GetPossibleMovesForPlayer(player); // moves currently does not get moves from rotating/flipping pieces. only if it fit
-                    if (moves.Any())
+                    var moves = gameboard.GetPossibleMovesForPlayer(player);
+                    string curname = "";
+                    int count = 0;
+                    foreach(Move m in moves)
                     {
-                        // gameInPlay = true // COMMENTED OUT UNTIL IMPLEMENTING MAKING MOVES
+                        if(m.piece.name==curname)
+                        {
+                            count += 1;
+                        }
+                        else
+                        {
+                            curname = m.piece.name;
+                            count = 1;
+                        }
+                    }
+                    if (moves.Any()) // why is player 1 getting a different number of moves than player 2?
+                    {
                         int pickedMove = random.Next(0, moves.Count);
                         Move toDoMove = moves[pickedMove];
+                        gameInPlay = true;
+                        // [TO DO] Make player use the toDoMove onto the board
                     }
                 }
                 if (gameInPlay == false) break;
