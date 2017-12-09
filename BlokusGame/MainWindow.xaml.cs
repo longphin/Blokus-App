@@ -102,7 +102,7 @@ namespace BlokusGame
                             count = 1;
                         }
                     }
-                    if (moves.Any()) // why is player 1 getting a different number of moves than player 2?
+                    if (moves.Any())
                     {
                         int pickedMove = random.Next(0, moves.Count);
                         Move toDoMove = moves[pickedMove];
