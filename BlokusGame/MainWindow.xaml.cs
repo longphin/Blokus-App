@@ -14,7 +14,6 @@ namespace BlokusGame
     public partial class MainWindow : Window
     {
         private int boardSize = 0;
-        private ColumnDefinition[] columns;
         private static Random random = new Random();
 
         public MainWindow()
@@ -150,47 +149,47 @@ namespace BlokusGame
 
         private static void AddPiecesForPlayer(Player p)
         {
-            p.AddPiece(new Piece("I1",
+            p.AddPiece(new Piece(0, "I1",
                 new List<int[]> { new int[] { 0, 0 } }));
-            p.AddPiece(new Piece("I2",
+            p.AddPiece(new Piece(1, "I2",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { 0, 1 } }));
-            p.AddPiece(new Piece("I3",
+            p.AddPiece(new Piece(2, "I3",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { 0, 1 }, new int[] { 0, 2 } }));
-            p.AddPiece(new Piece("I4",
+            p.AddPiece(new Piece(3, "I4",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { 0, 1 }, new int[] { 0, 2 }, new int[] { 0, 3 } }));
-            p.AddPiece(new Piece("I5",
+            p.AddPiece(new Piece(4, "I5",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { 0, 1 }, new int[] { 0, 2 }, new int[] { 0, 3 }, new int[] { 0, 4 } }));
-            p.AddPiece(new Piece("L3",
+            p.AddPiece(new Piece(5, "L3",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { 0, 1 }, new int[] { 1, 0 } }));
-            p.AddPiece(new Piece("L4",
+            p.AddPiece(new Piece(6, "L4",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { 0, 1 }, new int[] { 1, 0 }, new int[] { 0, 2 } }));
-            p.AddPiece(new Piece("L5",
+            p.AddPiece(new Piece(7, "L5",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { 0, 1 }, new int[] { 1, 0 }, new int[] { 0, 2 }, new int[] { 0, 3 } }));
-            p.AddPiece(new Piece("V5",
+            p.AddPiece(new Piece(8, "V5",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { 0, 1 }, new int[] { 1, 0 }, new int[] { 0, 2 }, new int[] { 2, 0 } }));
-            p.AddPiece(new Piece("Z4",
+            p.AddPiece(new Piece(9, "Z4",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { -1, 0 }, new int[] { 0, 1 }, new int[] { 1, 1 } }));
-            p.AddPiece(new Piece("Z5",
+            p.AddPiece(new Piece(10, "Z5",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { -1, 0 }, new int[] { -1, -1 }, new int[] { 1, 0 }, new int[] { 1, 1 } }));
-            p.AddPiece(new Piece("O4",
+            p.AddPiece(new Piece(11, "O4",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { 0, 1 }, new int[] { 1, 0 }, new int[] { 1, 1 } }));
-            p.AddPiece(new Piece("T5",
+            p.AddPiece(new Piece(12, "T5",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { -1, 0 }, new int[] { 1, 0 }, new int[] { 0, 1 }, new int[] { 0, 2 } }));
-            p.AddPiece(new Piece("T4",
+            p.AddPiece(new Piece(13, "T4",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { -1, 0 }, new int[] { 0, 1 }, new int[] { 1, 0 } }));
-            p.AddPiece(new Piece("N",
+            p.AddPiece(new Piece(14, "N",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { -1, -1 }, new int[] { 0, -1 }, new int[] { 1, 0 }, new int[] { 2, 0 } }));
-            p.AddPiece(new Piece("P",
+            p.AddPiece(new Piece(15, "P",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { 0, 1 }, new int[] { 0, 2 }, new int[] { 1, 1 }, new int[] { 1, 0 } }));
-            p.AddPiece(new Piece("W",
+            p.AddPiece(new Piece(16, "W",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { -1, 0 }, new int[] { -1, -1 }, new int[] { 0, 1 }, new int[] { 1, 1 } }));
-            p.AddPiece(new Piece("U",
+            p.AddPiece(new Piece(17, "U",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { 0, -1 }, new int[] { 1, -1 }, new int[] { 0, 1 }, new int[] { 1, 1 } }));
-            p.AddPiece(new Piece("F",
+            p.AddPiece(new Piece(18, "F",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { -1, 0 }, new int[] { 0, 1 }, new int[] { 0, -1 }, new int[] { 1, 1 } }));
-            p.AddPiece(new Piece("X",
+            p.AddPiece(new Piece(19, "X",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { -1, 0 }, new int[] { 0, 1 }, new int[] { 1, 0 }, new int[] { 0, -1 } }));
-            p.AddPiece(new Piece("R",
+            p.AddPiece(new Piece(20, "R",
                 new List<int[]> { new int[] { 0, 0 }, new int[] { -1, 0 }, new int[] { 0, 1 }, new int[] { 1, 0 }, new int[] { 2, 0 } }));
         }
     }
