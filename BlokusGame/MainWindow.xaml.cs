@@ -14,7 +14,7 @@ namespace BlokusGame
     public partial class MainWindow : Window
     {
         private int boardSize = 0;
-        private static Random random = new Random();
+        private static Random random = new Random(19);
 
         public MainWindow()
         {
@@ -103,8 +103,14 @@ namespace BlokusGame
                     }
                     if (moves.Any())
                     {
+                        // pick a random move
                         int pickedMove = random.Next(0, moves.Count);
                         Move toDoMove = moves[pickedMove];
+
+                        // pick a random center from the selected move
+                        int pickedCenter = random.Next(0, toDoMove.validCenters.Count);
+                        gameboard.MakeMove(players, player, toDoMove, pickedCenter);
+                        
                         gameInPlay = true;
                         // [TO DO] Make player use the toDoMove onto the board
                     }
