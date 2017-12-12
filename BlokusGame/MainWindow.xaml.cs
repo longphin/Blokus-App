@@ -1,10 +1,9 @@
 ﻿using Blokus;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using BlokusGame.Settings;
-using System.Linq;
-using System;
 
 namespace BlokusGame
 {
@@ -115,7 +114,11 @@ namespace BlokusGame
                         // [TO DO] Make player use the toDoMove onto the board
                     }
                 }
-                if (gameInPlay == false) break;
+                if (gameInPlay == false)
+                {
+                    gameboard.PrintBoardText();
+                    break;
+                }
             }
         }
         
